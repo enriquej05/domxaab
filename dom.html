@@ -23,6 +23,8 @@
      <div class="container">
         <div class="nav-wrapper">
             <a href="" class="brand-logo" id="nombre"></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
              
               <li>
@@ -32,6 +34,12 @@
           </div>
      </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="./nosotros.html">Nosotros</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">Javascript</a></li>
+      <li><a href="mobile.html">Mobile</a></li>
+    </ul>
    
  <div class="container" id="obj1">
      <div class="carousel carousel-slider center">
@@ -117,6 +125,10 @@
 
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.carousel');
             var instances = M.Carousel.init(elems);

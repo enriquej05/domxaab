@@ -16,13 +16,20 @@
     <nav>
         <div class="nav-wrapper">
           <a href="" class="brand-logo">Logo</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="">sass</a></li>
+            <li><a href="./nosotros.html">Nosotros</a></li>
             <li><a href="">sass <span class="new badge">4</span></a></li>
             <li><a href="">sass</a></li>
           </ul>
         </div>
       </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
     <div class="container">
         
         <div class="row">
@@ -38,9 +45,11 @@
                     </div>
                     <div class="row">
                         <div class="input-fiel col s12">
-                            <label for="correo">Correo</label>
-                            <input id="correo" type="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+                            <label for="correo">Correos</label>
+                            <input id="correo" type="email" pattern=".@gmail.com"
+                            title="Por favor, solo proporciona una dirección de correoᵉ corporativa que te haya proporcionado Best Startup Ever">
                             <span id="emailOK"></span>
+                            
                         </div>
                     </div>
                     <div class="row">
@@ -62,7 +71,7 @@
                     </form>
             
         
-            <button class="waves-effect waves-light btn-small" onclick="datos()">Enviar</button>
+            <button class="waves-effect waves-light btn-small" id="enviar">Enviar</button>
 
                 
             </div>
@@ -70,29 +79,47 @@
     </div>
     
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+    document.getElementById('correo').addEventListener('input', function() {
+    campo = event.target;
+    valido = document.getElementById('emailOK');
+    document.getElementById('enviar').disabled=false;
+
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(campo.value)) {
         
-        function datos(){
-       const nombre= document.getElementById('nombre').value;
+      valido.innerText = "válido";
+      document.getElementById('enviar').addEventListener('click', function(){
+        const nombre= document.getElementById('nombre').value;
        const correo= document.getElementById('correo').value;
        const password= document.getElementById('password').value;
        const confirmPasword= document.getElementById('confirmPasword').value;
-      
-       if(!nombre || !correo || !password || !confirmPasword){
+        if(!nombre  || !password || !confirmPasword){
            
-        alert('Necesita llenar los campos')
-       }
-       else {
-        if(password == confirmPasword){
-           
-            window.location.href = "./dom.html";
-            localStorage.setItem('nombre',nombre);
-            }else {
-            alert('Lo siento las contraseñas no coinciden');
-            }
+           alert('Necesita llenar los campos')
+          }
+          else {
+           if(password == confirmPasword){
+              
+               window.location.href = "./dom.html";
+               localStorage.setItem('nombre',nombre);
+               }else {
+               alert('Lo siento las contraseñas no coinciden');
+               }
+   
+          }
+      });
 
-       }
-
-        }
+    } else {
+      valido.innerText = "La direcion de email "+" <"+campo.value+"> es incorrecta";
+      document.getElementById('enviar').disabled=true;
+    }
+});
+        
 
       
     </script>
