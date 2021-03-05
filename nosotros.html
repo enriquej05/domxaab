@@ -14,13 +14,15 @@
     <nav>
         <div class="container">
            <div class="nav-wrapper">
-               <a href="" class="brand-logo" id="nombre"></a>
-             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
    
                <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                <li><a href="./nosotros.html">Nosotros</a></li>
                 
                  <li>
-                     <a onclick="salir()">Salir</a>
+                     <a onclick="salir()">Regresar</a>
                  </li>
                </ul>
              </div>
@@ -151,6 +153,10 @@
                 var elems = document.querySelectorAll('.sidenav');
                 var instances = M.Sidenav.init(elems);
             });
+            function salir() {
+            localStorage.clear();
+            window.location.href = "./index.html";
+        }
             name = localStorage.getItem('nombre');
         document.getElementById('nombre').innerHTML = name;
        </script>
