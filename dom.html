@@ -13,7 +13,7 @@
         
         h3  { position: fixed; }
         #caja { position: absolute; width: 100px; height: 100px; border: 1px solid black; 
-                background-color: yellow; right: 60px; top: 1100px;} 
+                background-color: yellow; right: 60px; top: 1190px;} 
         #textos {  width: 300px; height: 200px; border: 1px solid black; position: relative; right: -500px; margin-top: 150px; color: #fff; background:rgba(0, 0, 0, 0.7);}
         </style>
 </head>
@@ -41,9 +41,11 @@
       <li><a href="collapsible.html">Javascript</a></li>
       <li><a onclick="salir()">Salir</a></li>
     </ul>
-   
- <div class="container" id="obj1">
+    <div class="container" id="obj1">
+      
      <div class="carousel carousel-slider center">
+   
+
          <a class="carousel-item" ><img src="./img/heath-the-bumble-bee-4224954_1920.jpg"></a>
          <a class="carousel-item" ><img src="./img/cloud-5946381_1920.jpg"></a>
          <a class="carousel-item" ><img src="./img/boat-5889919_1280.png"></a>
@@ -55,6 +57,11 @@
  </div>
  <br><br>
  <div class="container" >
+   <br>
+   <h5 class="center-align">
+     <strong>Carrousel</strong>
+     Desplace el mouse
+   </h5>
     <button onclick="ocultar()" class="right waves-effect waves-light btn" >Ocultar</button>
     <button onclick="mostrar()" class="waves-effect waves-light btn" >Mostrar</button>
  </div>
@@ -92,7 +99,8 @@
                 El Modelo de Objetos del Documento (DOM) es una interfaz de programación de aplicaciones (API) para documentos validos HTML y bien construidos XML. Define la estructura lógica de los documentos y el modo en que se accede y manipula. En la especificación DOM, el término "documento" es utilizado en un sentido amplio - the term "document" is used in the broad sense - cada vez más XML es utilizado como un medio de representar muchas clases diferentes de información que puede ser almacenada en sistemas diversos, y mucha de esta información se vería, en términos tradicionales, más como datos que como documentos. Sin embargo, XML presenta estos datos como documentos, y se puede utilizar DOM para manejar estos datos.
             </p>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Intercambio Asíncrono</a>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Herramientas Asíncrono</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Herramientas Asíncrono</a> 
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Intercambio Síncrono</a> 
 
             <!-- Modal Structure -->
             <div id="modal1" class="modal">
@@ -114,11 +122,149 @@
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
                 </div>
             </div>
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                <h4>Intercambio Síncrono</h4>
+                <p>La comunicación sincrónica es el intercambio de información por Internet en tiempo real. Es un concepto que se enmarca dentro de la comunicación mediada por computadora, que es aquel tipo de comunicación que se da entre personas y que está mediatizada por ordenadores.
+                </p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
           
         
         </div>
   </div>
     
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card">
+        <div class="card-content ">
+          
+          <div class="row ">
+            <div class="col s12 m12 ">
+                <div class="card horizontal z-depth-0">
+                  <div class="card-image z-depth-3">
+                    
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+
+                          <div class="input-fiel col s12 m12">
+                            <label for="nombre">password</label>
+                            <input id="password" type="password" required placeholder="Escribe la contraseña">
+                          </div>
+      
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+
+                          <div class="input-fiel col s12 m12">
+                            <label for="nombre">Confirmar password</label>
+                            <input id="passwordConfirm" type="password" required placeholder="Confirmar la contraseña">
+                          </div>
+      
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+
+                          <div class="input-fiel col s12 m12">
+                            <button class="waves-effect waves-light btn center-align" onclick="varificandoPassword()">Clic para probar contraseña</button>
+                          </div>
+      
+                      </div>
+                      </div>
+                   
+                  </div>
+                  <div class="card-stacked">
+                    <div class="card-content z-depth-0">
+                        <span class="black-text">Validación vs. Manejo de Excepciones</span>
+                        <br><br><br>
+                        <h5 class="black-text flow-text">
+                            <strong class="pink-text">Javascript</strong>
+                            Validación
+                           
+                        </h5>
+                        <br>
+                        
+                      <p class="grey-text" style="text-align:justify ;">Cada formulario debe validar que el texto ingresado en los dos campos de contraseña sea igual. Esto es para garantizar que el usuario no cometa un error al escribir su contraseña. 
+                        Lo único que hacemos aquí es comparar los valores de los dos campos de entrada llamados <strong>Password</strong> y <strong>confirmPassword</strong>
+                        de igual manera se valida que los campos no se encuentren vacíos, de ser así no podrá llevar a cabo el registro de manera correcta
+
+                      </p>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+
+                <br><br> <br>
+                <div class="card horizontal z-depth-0">
+                  
+                  <div class="card-stacked">
+                    <div class="card-content z-depth-0">
+                        <br><br><br>
+                        <h5 class="black-text flow-text">
+                            <strong class="pink-text">HTML</strong>
+                            Validación
+                           
+                        </h5>
+                        <br>
+                        
+                      <p class="grey-text" style="text-align:justify ;">Si bien podemos usar JavaScript para validar la mayoría de nuestras entradas, hay casos en los que queremos ir por un camino más fácil. Cierto grado de validación de entrada está disponible en HTML5, y la mayoría de los navegadores están felices de aplicarlos. El uso de la validación HTML5 es más simple en algunos casos, aunque ofrece menos flexibilidad.
+
+                      </p>
+                    </div>
+                    
+                    
+                  </div>
+                  <div class="card-image z-depth-3">
+                    
+                    <form action="">
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+  
+                          <div class="input-fiel col s12 m12">
+                            <label for="nombre">password</label>
+                            <input id="password" type="password" required title="Ingrese el password" placeholder="Escribe la contraseña">
+                          </div>
+      
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+  
+                          <div class="input-fiel col s12 m12">
+                            <label for="nombre">Confirmar password</label>
+                            <input id="passwordConfirm" type="password" title="Confirma el password" required placeholder="Confirmar la contraseña">
+                          </div>
+      
+                      </div>
+                      </div>
+                      <div class="row">
+                        <div class="col  s12 m12 ">
+  
+                          <div class="input-fiel col s12 m12">
+                            <button class="waves-effect waves-light btn center-align" >Clic para validar campos vacíos</button>
+                          </div>
+      
+                      </div>
+                      </div>
+                    </form>
+                 
+                </div>
+                </div>
+              
+                    
+              </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
   
   <br/><br/><br/><br/><br/>
 
@@ -126,6 +272,31 @@
 
 
 <script>
+  function varificandoPassword(){
+   const password = document.getElementById('password').value;
+   const confirmpassword = document.getElementById('passwordConfirm').value;
+   if(password == "" && confirmpassword == ""){
+    var toastHTML = '<span>Necesita llenar los campos</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({html: toastHTML});
+   } else {
+    if(password && confirmpassword ){
+    
+    if(password == confirmpassword) {
+      
+      var toastHTML = '<span>Contraseña correcta</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({html: toastHTML});
+     }else {
+      var toastHTML = '<span>Lo siento las contraseñas no coinciden</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({html: toastHTML});
+     }
+     }else {
+      var toastHTML = '<span>Necesita llenar todos los campos</span><button class="btn-flat toast-action">Ok</button>';
+    M.toast({html: toastHTML});
+     }
+   }
+  
+   
+  }
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
